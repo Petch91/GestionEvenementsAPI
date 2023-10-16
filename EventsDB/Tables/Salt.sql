@@ -1,0 +1,5 @@
+﻿CREATE TABLE [dbo].[Salt]
+(
+	[Id] INT NOT NULL PRIMARY KEY IDENTITY, 
+    [Value] VARCHAR(MAX) NOT NULL
+)
