@@ -6,6 +6,6 @@
     [EndDate] DATETIME2 NOT NULL, 
     [Location] VARCHAR(50) NOT NULL, 
     [Adress] VARCHAR(200) NOT NULL, 
-    [StatusId] INT NOT NULL, 
+    [StatusId] INT NOT NULL DEFAULT 1, 
     CONSTRAINT [FK_Event_Status] FOREIGN KEY ([StatusId]) REFERENCES [Status]([Id])
 )

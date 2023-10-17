@@ -59,6 +59,7 @@
     <Folder Include="Tables" />
     <Folder Include="Stored Proc" />
     <Folder Include="Func" />
+    <Folder Include="Views" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Tables\Users.sql" />
@@ -73,8 +74,14 @@
     <Build Include="Stored Proc\UserRegister.sql" />
     <Build Include="Func\GetSecretKey.sql" />
     <Build Include="Stored Proc\UserLogin.sql" />
+    <Build Include="Views\EventTypeDayView.sql" />
+    <Build Include="Stored Proc\CreateEventTypeDay.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="EventsDB.publish.xml" />
+    <None Include="EventsDB_Techni.publish.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="Script.PostDeployment1.sql" />
   </ItemGroup>
 </Project>
