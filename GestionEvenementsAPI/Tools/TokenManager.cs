@@ -26,7 +26,7 @@ namespace GestionEvenementsAPI.Tools
          Claim[] claims = new Claim[]
          {
                 new Claim(ClaimTypes.Sid, user.Id.ToString()),
-                new Claim(ClaimTypes.Role, user.RoleId == 1 ? "User" : "Admin")
+                new Claim(ClaimTypes.Role, user.Role.Id == 1 ? "User" : "Admin")
 
          };
 

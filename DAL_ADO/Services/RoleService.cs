@@ -9,27 +9,27 @@ using System.Threading.Tasks;
 
 namespace DAL_ADO.Services
 {
-    public class EventTypeService : BaseService<int, EventType> , IEventTypeService
+   public class RoleService : BaseService<int, Role>, IRoleService
    {
-      public EventTypeService(SqlConnection cnx) : base(cnx)
+      public RoleService(SqlConnection cnx) : base(cnx)
       {
       }
 
-      public override EventType Create(EventType entity)
+      public override Role Create(Role entity)
       {
          throw new NotImplementedException();
       }
 
-      public override EventType Mapper(SqlDataReader record)
+      public override Role Mapper(SqlDataReader record)
       {
-         return new EventType 
+         return new Role
          {
             Id = (int)record["Id"],
-            Name = (string)record["Name"]   
+            Name = (string)record["Name"]
          };
       }
 
-      public override void Update(EventType entity)
+      public override void Update(Role entity)
       {
          throw new NotImplementedException();
       }

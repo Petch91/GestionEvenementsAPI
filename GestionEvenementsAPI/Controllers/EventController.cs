@@ -15,11 +15,13 @@ namespace GestionEvenementsAPI.Controllers
    {
       private readonly IEventService _eventService;
       private readonly IEventTypeDayService _eventTypeDayService;
+      private readonly IEventTypeService _eventTypeService;
 
-      public EventController(IEventService eventService, IEventTypeDayService eventTypeDayService)
+      public EventController(IEventService eventService, IEventTypeDayService eventTypeDayService, IEventTypeService eventTypeService)
       {
          _eventService = eventService;
          _eventTypeDayService = eventTypeDayService;
+         _eventTypeService = eventTypeService;
       }
       [HttpGet]
       public IActionResult Get()
@@ -53,6 +55,12 @@ namespace GestionEvenementsAPI.Controllers
          {
             return BadRequest(ex.Message);
          }
+      }
+
+      [HttpGet("GetTypes")]
+      public IActionResult GetTypes()
+      {
+         return Ok(_eventTypeService.ReadAll());
       }
    }
 }

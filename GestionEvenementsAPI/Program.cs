@@ -19,7 +19,11 @@ builder.Services.AddTransient(sp => new SqlConnection(builder.Configuration.GetC
 
 builder.Services.AddScoped<IEventService, EventService>();
 builder.Services.AddScoped<IEventTypeDayService, EventTypeDayService>();
+builder.Services.AddScoped<IEventTypeService, EventTypeService>();
+builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IRoleService, RoleService>();
 
+builder.Services.AddScoped<TokenManager>();
 
 builder.Services.AddAuthorization(options =>
 {
