@@ -9,6 +9,6 @@ namespace GestionEvenementsAPI.Models.Form
       public DateTime EndDate { get; set; }
       public string Location { get; set; }
       public string Adress { get; set; }
-      public List<EventTypeDay> TypeByDay { get; set; }
+
    }
 }

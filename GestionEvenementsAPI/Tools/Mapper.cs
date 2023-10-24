@@ -21,5 +21,15 @@ namespace GestionEvenementsAPI.Tools
       {
          return new UserView { Id = user.Id, NickName = user.NickName };
       }
+
+      public static EventTypeDay ToCreate(this EventTypeDayCreate e)
+      {
+         return new EventTypeDay
+         {
+            Date = e.Date,
+            EventId = e.EventId,
+            Type = new EventType { Id = e.TypeId }
+         };
+      }
    }
 }

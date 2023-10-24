@@ -43,18 +43,22 @@ namespace GestionEvenementsAPI.Controllers
 
          try
          {
-            Event e =  _eventService.Create(@event.ToDal());
-            e.TypeByDays = new List<EventTypeDay>();
-            foreach(EventTypeDay etd in @event.TypeByDay)
-            {
-               e.TypeByDays.Add(_eventTypeDayService.Create(etd));
-            }
+            _eventService.Create(@event.ToDal());
             return Ok();
          }
          catch (Exception ex)
          {
             return BadRequest(ex.Message);
          }
+      }
+
+      [HttpPost("AddTypeByDay")]
+      public IActionResult AddType([FromBody] EventTypeDayCreate eventTypeDays)
+      {
+
+            _eventTypeDayService.Create(eventTypeDays.ToCreate());
+
+         return Ok();
       }
 
       [HttpGet("GetTypes")]
