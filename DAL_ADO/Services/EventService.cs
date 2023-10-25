@@ -44,7 +44,7 @@ namespace DAL_ADO.Services
             EndDate = (DateTime)record["EndDate"],
             Location = (string)record["Location"],
             Adress = (string)record["Adress"],
-            StatusId = (int)record["StatusId"]
+            Status = new Status { Id = (int)record["StatusId"] }
          };
       }
 

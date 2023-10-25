@@ -89,5 +89,14 @@ namespace GestionEvenementsAPI.Controllers
          _UserService.SetRole(model.UserId, model.RoleId);
          return Ok();
       }
+      [Authorize("IsConnected")]
+      [HttpPatch("ChangeInfo")]
+      public IActionResult Update(User model)
+      {
+         if (!ModelState.IsValid)
+            return BadRequest("connard");
+         _UserService.Update(model);
+         return Ok();
+      }
    }
 }

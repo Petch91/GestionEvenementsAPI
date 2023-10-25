@@ -1,0 +1,6 @@
+﻿CREATE TABLE [dbo].[BanList]
+(
+	[Id] INT NOT NULL PRIMARY KEY IDENTITY, 
+    [UserId] INT NOT NULL, 
+    [Email] VARCHAR(50) NOT NULL
+)

@@ -14,7 +14,7 @@ namespace DAL_ADO.Models
       public DateTime EndDate { get; set; }
       public string Location { get; set; }
       public string Adress { get; set; }
-      public int StatusId { get; set; }
+      public Status Status { get; set; }
       public List<EventTypeDay> TypeByDays { get; set; }
 
       public void AddTypeByDay(IEnumerable<EventTypeDay> typeDays)

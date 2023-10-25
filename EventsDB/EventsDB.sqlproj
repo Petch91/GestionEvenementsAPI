@@ -76,6 +76,8 @@
     <Build Include="Stored Proc\UserLogin.sql" />
     <Build Include="Views\EventTypeDayView.sql" />
     <Build Include="Stored Proc\CreateEventTypeDay.sql" />
+    <Build Include="Tables\WaitList.sql" />
+    <Build Include="Tables\BanList.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="EventsDB.publish.xml" />

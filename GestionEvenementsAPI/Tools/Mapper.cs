@@ -1,5 +1,6 @@
 ﻿using DAL_ADO.Models;
 using GestionEvenementsAPI.Models;
+using GestionEvenementsAPI.Models.DTO;
 using GestionEvenementsAPI.Models.Form;
 
 namespace GestionEvenementsAPI.Tools
@@ -31,5 +32,22 @@ namespace GestionEvenementsAPI.Tools
             Type = new EventType { Id = e.TypeId }
          };
       }
+
+      public static EventDTO ToDTO(this Event ev) 
+      {
+         return new EventDTO
+         {
+            Id = ev.Id,
+            Name = ev.Name,
+            StartDate = ev.StartDate,
+            EndDate = ev.EndDate,
+            Location = ev.Location,
+            Adress = ev.Adress,
+            TypeByDays = ev.TypeByDays,
+            Status = ev.Status.Name
+
+         };
+      }
+
    }
 }

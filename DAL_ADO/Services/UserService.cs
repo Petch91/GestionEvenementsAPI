@@ -39,7 +39,18 @@ namespace DAL_ADO.Services
 
       public override void Update(User entity)
       {
-         throw new NotImplementedException();
+         string sql = "UPDATE Users SET LastName = @lastname, FirstName = @firstname, GSM = @GSM, NickName = @nickname, Allergie = @allergies, InfoSupp = @infosupp WHERE Id = @idUser";
+         SqlParameter[] parameters =
+         {
+            GenerateParameter("GSM",entity.GSM),
+            GenerateParameter("lastname",entity.LastName),
+            GenerateParameter("firstname",entity.FirstName),
+            GenerateParameter("nickname",entity.NickName),
+            GenerateParameter("allergies",entity.Allergie),
+            GenerateParameter("infosupp",entity.InfoSupp),
+            GenerateParameter("idUser",entity.Id)
+         };
+         ExecuteNonQuery(sql, parameters);
       }
 
       public User Login(string email, string pwd)
@@ -99,14 +110,6 @@ namespace DAL_ADO.Services
          };
          ExecuteNonQuery(sql, parameters);
       }
-      public bool IsParticipant(int idUser)
-      {
-         string sql = "SELECT COUNT(*) FROM Participate WHERE CosplayerId = @idUser";
-         SqlParameter[] parameters =
-         {
-            GenerateParameter("idUser",idUser)
-         };
-         return (int)ExecuteScalar(sql, parameters) > 0;
-      }
+
    }
 }
